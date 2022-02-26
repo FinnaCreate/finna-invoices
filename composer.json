@@ -1,0 +1,31 @@
+{
+    "name": "finnacreate/finna-invoices",
+    "description": "Fully featured invoicing system built directly into your WordPress website.",
+    "type": "wordpress-plugin",
+    "keywords": [
+        "WordPress",
+        "plugins",
+        "themes",
+        "php"
+    ],
+    "license": "GPL",
+    "minimum-stability": "dev",
+    "require": {},
+    "autoload": {
+        "psr-4": {
+            "Inc\\": "./inc"
+        }
+    },
+    "authors": [
+        {
+            "name": "FinnaCreate",
+            "email": "finnacreate@gmail.com"
+        }
+    ],
+    "config": {
+        "optimize-autoloader": true,
+        "preferred-install": "dist",
+        "sort-packages": true
+    },
+    "prefer-stable": true
+}
