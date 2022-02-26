@@ -423,6 +423,10 @@ Ensure the default browser behavior of the `hidden` attribute.
   display: none;
 }
 
+a {
+  color: #2271b1;
+}
+
 *, ::before, ::after {
   --tw-translate-x: 0;
   --tw-translate-y: 0;

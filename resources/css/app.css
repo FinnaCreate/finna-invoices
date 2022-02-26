@@ -1,5 +1,11 @@
-@import "tailwindcss/base";
-@import "tailwindcss/components";
-@import "tailwindcss/utilities";
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
 
-@import "custom.css";
+@import 'custom.css';
+
+@layer base {
+    a {
+        color: #2271b1;
+    }
+}
