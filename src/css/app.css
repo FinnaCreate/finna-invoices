@@ -3,9 +3,3 @@
 @import 'tailwindcss/utilities';
 
 @import 'custom.css';
-
-@layer base {
-    a {
-        color: #2271b1;
-    }
-}
