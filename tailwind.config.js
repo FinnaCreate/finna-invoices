@@ -1,8 +1,8 @@
 module.exports = {
     content: ['./*/*.php', './**/*.php', './resources/css/*.css', './resources/js/*.js', './safelist.txt'],
-    // corePlugins: {
-    //     preflight: false
-    // },
+    corePlugins: {
+        preflight: false
+    },
     theme: {
         extend: {},
         screens: {
