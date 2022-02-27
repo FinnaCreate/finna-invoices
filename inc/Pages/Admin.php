@@ -1,6 +1,8 @@
 <?php
 /**
- * @package  Finna Invoices
+ * Admin pages.
+ *
+ * @package Finna Invoices
  */
 namespace Inc\Pages;
 
@@ -14,11 +16,10 @@ class Admin
 	}
 
 	public function add_admin_pages() {
-        $menu_slug = strtolower(str_replace(" ", "_", PLUGIN_NAME));
-        add_menu_page(PLUGIN_NAME, PLUGIN_NAME, 'manage_options', $menu_slug, array( $this, 'admin_index' ), 'dashicons-book-alt', 110 );
+        add_menu_page(PLUGIN_NAME, PLUGIN_NAME, 'manage_options', PLUGIN_SLUG, array( $this, 'admin_index' ), 'dashicons-book-alt', 110 );
 	}
 
 	public function admin_index() {
-		require_once PLUGIN_PATH . 'templates/admin.php';
+		require_once PLUGIN_PATH . '/templates/admin.php';
 	}
 }

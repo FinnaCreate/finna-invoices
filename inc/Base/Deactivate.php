@@ -1,5 +1,7 @@
 <?php
 /**
+ * Deactivate plugin.
+ *
  * @package Finna Invoices
  */
 

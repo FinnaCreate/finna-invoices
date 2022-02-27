@@ -1,6 +1,6 @@
 <?php
 /**
- * Enqueue class.
+ * Enqueue admin dashboard styles and scripts.
  *
  * @package Finna Invoices
  */
