@@ -7,12 +7,20 @@
 namespace Inc\Pages;
 
 use \Inc\Base\BaseController;
+use \Inc\Api\SettingsApi;
 
 /**
 *
 */
 class Admin extends BaseController
 {
+    // public $settings;
+
+    // public function __construct()
+    // {
+    //     $this->settings = new SettingsApi();
+    // }
+
 	public function register() {
 		add_action( 'admin_menu', array( $this, 'add_admin_pages' ) );
 	}
@@ -22,6 +30,6 @@ class Admin extends BaseController
 	}
 
 	public function admin_index() {
-		require_once $this->plugin_path . '/templates/admin.php';
+		require_once $this->plugin_path . '/views/admin.php';
 	}
 }
