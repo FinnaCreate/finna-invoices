@@ -43,48 +43,40 @@ if (file_exists(dirname(__FILE__) . '/vendor/autoload.php')) {
 }
 
 /**
- * Set constants
+ * Run the plugin activation
+ *
+ * @return void
  */
-if (!defined('PLUGIN_NAME'))
-    define('PLUGIN_NAME', ucwords(str_replace("-", " ", trim(dirname(plugin_basename(__FILE__)), '/'))));
-
-if (!defined('PLUGIN_SLUG'))
-    define('PLUGIN_SLUG', str_replace("-", "_", trim(dirname(plugin_basename(__FILE__)), '/')));
-
-if (!defined('PLUGIN_BASENAME'))
-    define('PLUGIN_BASENAME', plugin_basename(__FILE__));
-
-if (!defined('PLUGIN_URL'))
-    define('PLUGIN_URL', plugin_dir_url(__FILE__));
-
-if (!defined('PLUGIN_PATH'))
-    define('PLUGIN_PATH', plugin_dir_path(__FILE__));
-
-if (!defined('PLUGIN_JS_DIR'))
-    define('PLUGIN_JS_DIR', plugins_url('build/js/', __FILE__));
-
-if (!defined('PLUGIN_CSS_DIR'))
-    define('PLUGIN_CSS_DIR', plugins_url('build/css/', __FILE__));
-
-use Inc\Base\Activate;
-use Inc\Base\Deactivate;
-
 function activate_finna_invoices() {
-    Activate::activate();
+    Inc\Base\Activate::activate();
 }
-
-function deactivate_finna_invoices() {
-    Deactivate::deactivate();
-}
-
 register_activation_hook(__FILE__, 'activate_finna_invoices');
+
+/**
+ * Run the plugin deactivation
+ *
+ * @return void
+ */
+function deactivate_finna_invoices() {
+    Inc\Base\Deactivate::deactivate();
+}
 register_deactivation_hook(__FILE__, 'deactivate_finna_invoices');
 
+/**
+ * Check the PHP version
+ *
+ * @return void
+ */
 if (! Inc\Base\PHP::version_met()) {
     add_action('admin_notices', 'Inc\Base\PHP::incorrect_php_version');
     return;
 }
 
+/**
+ * Auto Instatiate classes
+ *
+ * @return void
+ */
 if (class_exists('Inc\\Init')) {
     Inc\Init::register_services();
 }
